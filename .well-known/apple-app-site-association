@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["U34G42XFT8.com.lifelinesimulator.game"],
+        "components": [
+          {
+            "/": "/lifeline-game/e/*",
+            "comment": "LifeLine in-app events and deep links"
+          }
+        ]
+      }
+    ]
+  }
+}
