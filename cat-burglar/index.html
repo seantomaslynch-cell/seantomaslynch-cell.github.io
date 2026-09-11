@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Cat Burglar</title>
+<link rel="stylesheet" href="style.css">
+<!-- YouTube Playables SDK. MUST be loaded before any game code. Served locally
+     it simply does not resolve, and the game falls back to its web backend.
+     This tag carries `src` and NOTHING else: YouTube rejects an entry HTML whose
+     SDK tag has any other attribute (async, defer, nonce, onerror, ...), because
+     it injects its own per-load CSP nonce when it serves the game. -->
+<script src="https://www.youtube.com/game_api/v1"></script>
+</head>
+<body>
+<div id="app">
+  <canvas id="stage" aria-label="Cat Burglar game field" role="img"></canvas>
+
+  <!-- Heads-up display, drawn over the field. Hidden outside a mission. -->
+  <div id="hud" class="hidden" aria-live="polite">
+    <div class="hud-left">
+      <div class="chip" id="chip-mission"><span class="chip-k">Mission</span><b id="hud-mission">1</b></div>
+      <div class="chip" id="chip-loot"><span class="ic ic-bag"></span><b id="hud-loot">0/1</b></div>
+      <div class="chip" id="chip-gem"><span class="ic ic-gem"></span><b id="hud-gem">0/3</b></div>
+    </div>
+    <div class="hud-right">
+      <!-- The one rewarded offer that lives on the HUD during a mission.
+           Hidden unless the placement can actually serve, it has not already
+           been taken this mission, and its cooldown has elapsed. Tapping it
+           pauses the run first, so reaching for an ad can never get you
+           caught. Opt-in and labelled, like every other rewarded offer. -->
+      <button id="btn-stealth" class="icon-btn hud-ad hidden" type="button"
+              aria-label="Watch an ad: guards notice you 25 percent slower for the rest of this mission">
+        <svg class="hud-ad-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6z"
+                stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="2.6" fill="currentColor"/>
+          <path d="M4 20L20 4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="adtag">AD</span>
+      </button>
+      <button id="btn-pause" class="icon-btn" type="button" aria-label="Pause mission">
+        <span class="ic ic-pause"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Gadget bar. Touch targets are 56px so they clear the 48dp minimum. -->
+  <div id="gadgets" class="hidden">
+    <button class="gadget" type="button" data-slot="0" aria-label="Use gadget in slot 1">
+      <span class="g-icon"></span><span class="g-count">0</span>
+    </button>
+    <button class="gadget" type="button" data-slot="1" aria-label="Use gadget in slot 2">
+      <span class="g-icon"></span><span class="g-count">0</span>
+    </button>
+  </div>
+
+  <div id="toast" class="hidden" role="status"></div>
+  <div id="screens"></div>
+</div>
+<script type="module" src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>Endless Core</title>
+<script src="https://bridge.playgama.com/v2/stable/playgama-bridge.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="game-container">
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="hud-currency-row">
+      <div id="gold-display"><span class="coin-icon"></span> <span id="gold-amount-text">0</span></div>
+      <div id="diamond-display">💎 0</div>
+    </div>
+    <div id="hud-stats-row">
+      <div id="depth-display">⛏️ 0m</div>
+      <div id="score-display">⭐ 0</div>
+    </div>
+    <div id="combo-display" class="hidden">x1.0</div>
+    <div id="biome-display">Dirt</div>
+    <div id="magnet-display" class="hidden">🧲 Magnet: 10.0s</div>
+    <div id="shield-display" class="hidden">🛡️ Shield: 8.0s</div>
+    <div id="score-boost-display" class="hidden">⭐ 2x Score: 12.0s</div>
+    <div id="health-bar-outer">
+      <div id="health-bar-inner"></div>
+    </div>
+    <div id="overdrive-bar-outer">
+      <div id="overdrive-bar-inner"></div>
+    </div>
+  </div>
+
+  <!-- Core Overdrive screen-border flash (invincibility signal) -->
+  <div id="overdrive-flash"></div>
+
+  <!-- Player-initiated pause (distinct from the SDK-driven platform pause
+       below). Only visible during an active run. -->
+  <button id="pause-btn" class="hidden" aria-label="Pause">❚❚</button>
+  <div id="manual-pause-screen" class="overlay hidden">
+    <h1>Paused</h1>
+    <button id="manual-pause-resume-btn">▶️ Resume</button>
+    <button id="manual-pause-menu-btn" class="menu-nav-btn">🏠 Main Menu</button>
+  </div>
+
+  <!-- Contract-complete / Fallen Miners toast -->
+  <div id="toast" class="hidden"></div>
+
+  <!-- SDK-driven pause overlay (YouTube platform pause, not a player toggle) -->
+  <div id="pause-overlay" class="overlay hidden">
+    <h1>Paused</h1>
+  </div>
+
+  <!-- Start Screen -->
+  <div id="start-screen" class="overlay">
+    <div id="ember-field" aria-hidden="true">
+      <span class="ember"></span><span class="ember"></span><span class="ember"></span>
+      <span class="ember"></span><span class="ember"></span><span class="ember"></span>
+      <span class="ember"></span><span class="ember"></span>
+    </div>
+    <div id="start-hud">
+      <div id="start-currency-row">
+        <div id="start-gold-pill"><span class="coin-icon"></span> <span id="start-gold-amount">0</span></div>
+        <div id="start-diamond-pill">💎 <span id="start-diamond-amount">0</span></div>
+      </div>
+      <div id="start-streak-pill" class="hidden">🔥 <span id="start-streak-amount">0</span> Day Streak</div>
+    </div>
+    <button id="settings-btn" aria-label="Settings">⚙️</button>
+    <div class="menu-title">
+      <div class="menu-title-eyebrow">Endless Core</div>
+      <h1>MINING RUSH</h1>
+      <div class="menu-title-underline"></div>
+    </div>
+    <p>Drill down. Avoid stone. Grab gold.</p>
+    <p id="start-highscore">High Score: 0</p>
+    <button id="start-btn" class="menu-primary-btn">Start Drilling</button>
+    <div class="menu-secondary-grid">
+      <button id="start-pass-btn" class="menu-secondary-btn">🏆 Season Pass<span id="pass-claim-badge" class="claim-badge hidden"></span></button>
+      <button id="start-upgrades-btn" class="menu-secondary-btn">🔧 Upgrades</button>
+      <button id="start-museum-btn" class="menu-secondary-btn">🏺 Museum</button>
+      <button id="start-loadout-btn" class="menu-secondary-btn">🛠️ Loadout</button>
+      <button id="start-contracts-btn" class="menu-secondary-btn">📋 Contracts</button>
+      <button id="start-trails-btn" class="menu-secondary-btn">✨ Trails</button>
+      <button id="start-base-btn" class="menu-secondary-btn menu-base-btn">
+        <span class="menu-base-btn-label">🏰 My Base</span>
+        <span id="start-base-progress" class="menu-base-btn-progress">Lv 0/20</span>
+        <span id="base-claim-badge" class="claim-badge hidden"></span>
+      </button>
+      <button id="start-leaderboard-btn" class="menu-secondary-btn menu-base-btn">🏆 Leaderboard</button>
+    </div>
+  </div>
+
+  <!-- Welcome Back / Offline Mining Overlay — shown (stacked over the Start
+       Screen) only when idle gold was earned; blocks Start until dismissed -->
+  <div id="welcome-back-screen" class="overlay hidden">
+    <h1>Welcome Back!</h1>
+    <p>Your rig mined <span id="welcome-back-gold">0</span> Gold while you were away.</p>
+    <button id="welcome-back-double-btn">💰 Watch Ad to 2x This Gold</button>
+    <button id="welcome-back-btn">Collect</button>
+  </div>
+
+  <!-- First-run tutorial — shown once ever, stacked over the Start Screen
+       the very first time the game loads (mutually exclusive with Welcome
+       Back, which only shows on a RETURN visit). -->
+  <div id="tutorial-screen" class="overlay hidden">
+    <h1>HOW TO PLAY</h1>
+    <p class="hint">Everything you need to know before your first drop.</p>
+    <div class="tutorial-list">
+      <p>👆 Hold LEFT or RIGHT side of the screen to steer</p>
+      <p><span class="coin-icon"></span> Grab Gold and 💎 rare Diamonds as you drill</p>
+      <p>⚠️ Avoid Stone and ☠️ Gas — they damage your drill</p>
+      <p>📦 Chests grant temporary power-ups</p>
+      <p>🏺 Rare Relics unlock rewards in the Museum</p>
+    </div>
+    <button id="tutorial-close-btn" class="menu-primary-btn">Got It!</button>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameover-screen" class="overlay hidden">
+    <h1>DRILL DESTROYED</h1>
+    <p>Final Depth: <span id="final-depth">0m</span></p>
+    <p>Total Gold: <span id="final-gold">0</span></p>
+    <p id="final-score">Score: 0</p>
+    <p id="final-contract-bonus" class="contract-bonus-line"></p>
+    <p id="new-highscore-badge" class="hidden">NEW HIGH SCORE!</p>
+    <p id="highscore-display">High Score: 0</p>
+    <button id="revive-btn">❤️ Watch Ad to Revive (Restore 50% Health)</button>
+    <button id="double-gold-btn">💰 Watch Ad to 2x Gold</button>
+    <button id="share-score-btn">📤 Share Score</button>
+    <button id="upgrades-btn">🔧 Upgrades</button>
+    <button id="museum-btn">🏺 Museum</button>
+    <button id="restart-btn">🔄 Restart</button>
+    <button id="gameover-menu-btn" class="menu-nav-btn">🏠 Main Menu</button>
+  </div>
+
+  <!-- Upgrades Overlay: 4-path Tech Tree -->
+  <div id="upgrades-screen" class="overlay hidden">
+    <h1>TECH TREE</h1>
+    <p>Banked Gold: <span id="banked-gold">0</span></p>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Fuel Tank</div>
+      <div class="upgrade-desc" id="fuel-upgrade-desc">Level 0/5 — Max Health 100</div>
+      <button id="fuel-upgrade-btn">Upgrade — 20 Gold</button>
+    </div>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Cooling System</div>
+      <div class="upgrade-desc" id="cooling-upgrade-desc">Level 0/5 — Magma Fuel Drain 1.50x</div>
+      <button id="cooling-upgrade-btn">Upgrade — 25 Gold</button>
+    </div>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Thruster Array</div>
+      <div class="upgrade-desc" id="thruster-upgrade-desc">Level 0/5 — Steer Speed 220</div>
+      <button id="thruster-upgrade-btn">Upgrade — 20 Gold</button>
+    </div>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Alloy Plating</div>
+      <div class="upgrade-desc" id="alloy-upgrade-desc">Level 0/5 — -0 Dmg Reduction</div>
+      <button id="alloy-upgrade-btn">Upgrade — 30 Gold</button>
+    </div>
+
+    <button id="close-upgrades-btn">Close</button>
+  </div>
+
+  <!-- Base Overlay: hub for Descend + Diamond-funded Base upgrades. No
+       loss-on-death / extraction risk in this pass — see game.js comments
+       near the diamonds state fields for why. -->
+  <div id="base-screen" class="overlay hidden">
+    <h1>THE BASE</h1>
+    <p class="hint">Upgrade your camp. Customize the look. Make it yours.</p>
+    <p>💎 Diamonds: <span id="base-diamond-amount">0</span></p>
+
+    <button id="base-descend-btn" class="menu-primary-btn">⛏️ Descend</button>
+
+    <button id="base-watch-ad-diamond-btn">📺 Watch Ad for a Bonus Diamond</button>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Offline Rig</div>
+      <div class="upgrade-desc" id="offline-rig-upgrade-desc">Level 0/5 — Offline Gold Rate 10/hr</div>
+      <button id="offline-rig-upgrade-btn">Upgrade — 3 💎</button>
+    </div>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Diamond Sieve</div>
+      <div class="upgrade-desc" id="diamond-sieve-upgrade-desc">Level 0/5 — Diamond Find Rate 1.00x</div>
+      <button id="diamond-sieve-upgrade-btn">Upgrade — 5 💎</button>
+    </div>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Relic Scanner</div>
+      <div class="upgrade-desc" id="relic-scanner-upgrade-desc">Level 0/5 — Relic Find Rate 1.00x</div>
+      <button id="relic-scanner-upgrade-btn">Upgrade — 8 💎</button>
+    </div>
+
+    <div class="upgrade-card">
+      <div class="upgrade-name">Contract Runner</div>
+      <div class="upgrade-desc" id="contract-runner-upgrade-desc">Level 0/5 — Contract Gold 1.00x</div>
+      <button id="contract-runner-upgrade-btn">Upgrade — 6 💎</button>
+    </div>
+
+    <h1 class="base-skins-heading">CAMP SKINS</h1>
+    <div class="trail-list" id="base-skin-list"></div>
+
+    <h1 class="base-skins-heading">PRESTIGE</h1>
+    <p class="hint">Max every upgrade above to reset your economy for a permanent Gold bonus.</p>
+    <div class="upgrade-card">
+      <div class="upgrade-name" id="prestige-level-label">Prestige Level 0</div>
+      <div class="upgrade-desc" id="prestige-desc">+0% Gold, permanently</div>
+      <button id="prestige-btn" disabled>Max everything first</button>
+    </div>
+
+    <button id="close-base-btn">Close</button>
+  </div>
+
+  <!-- Trails Overlay (cosmetics) -->
+  <div id="trails-screen" class="overlay hidden">
+    <h1>TRAILS</h1>
+    <p>Banked Gold: <span id="trails-banked-gold">0</span></p>
+    <div class="trail-list" id="trail-list"></div>
+    <button id="close-trails-btn">Close</button>
+  </div>
+
+  <!-- Season Pass Overlay — free-track progression: play to earn Pass XP,
+       climb tiers, claim Gold + exclusive Trails. No real money involved. -->
+  <div id="pass-screen" class="overlay hidden">
+    <h1>SEASON PASS</h1>
+    <p id="pass-season-info" class="hint">Season 1 · Free Track</p>
+    <div id="pass-progress-summary">Tier 0 / 25</div>
+    <div id="pass-progress-bar-outer">
+      <div id="pass-progress-bar-inner"></div>
+    </div>
+    <p id="pass-progress-label">0 / 150 XP to Tier 1</p>
+    <div class="pass-tier-list" id="pass-tier-list"></div>
+    <button id="close-pass-btn">Close</button>
+  </div>
+
+  <!-- Chest Overlay (mid-run power-up) -->
+  <div id="chest-screen" class="overlay hidden">
+    <h1>Supply Cache!</h1>
+    <p>You found a Supply Cache!</p>
+    <p id="chest-powerup-desc" class="hint"></p>
+    <button id="chest-ad-btn">Watch Ad to Activate Magnet (10s)</button>
+    <button id="chest-skip-btn">Skip</button>
+  </div>
+
+  <!-- Artifact Museum Overlay -->
+  <div id="museum-screen" class="overlay hidden">
+    <h1>ARTIFACT MUSEUM</h1>
+    <p id="museum-count">0 / 5 Relics Collected</p>
+    <div class="relic-grid" id="relic-grid"></div>
+    <button id="open-achievements-btn">🏅 Achievements</button>
+    <button id="close-museum-btn">Close</button>
+  </div>
+
+  <!-- Achievements Overlay — lifetime completionist goals, separate from
+       Game Center (which may not even be enabled yet) so there's always
+       something to track regardless of that status. -->
+  <div id="achievements-screen" class="overlay hidden">
+    <h1>ACHIEVEMENTS</h1>
+    <p id="achievements-count" class="hint">0 / 0 Unlocked</p>
+    <div class="achievement-list" id="achievement-list"></div>
+    <button id="close-achievements-btn">Close</button>
+  </div>
+
+  <!-- Bridge SaaS Leaderboard Overlay (web only) — only actually rendered
+       into when bridge.leaderboards.type is 'in_game' (see
+       openLeaderboard() in game.js); 'native_popup' platforms show their
+       own UI instead and never touch this markup. -->
+  <div id="leaderboard-screen" class="overlay hidden">
+    <h1>LEADERBOARD</h1>
+    <div class="leaderboard-list" id="leaderboard-list"></div>
+    <button id="close-leaderboard-btn">Close</button>
+  </div>
+
+  <!-- Settings Overlay -->
+  <div id="settings-screen" class="overlay hidden">
+    <h1>SETTINGS</h1>
+    <div class="settings-row">
+      <span class="settings-label">🔊 Sound</span>
+      <button id="settings-sound-toggle" class="settings-toggle">On</button>
+    </div>
+    <div class="settings-row">
+      <span class="settings-label">📳 Haptics</span>
+      <button id="settings-haptics-toggle" class="settings-toggle">On</button>
+    </div>
+    <button id="close-settings-btn">Close</button>
+  </div>
+
+  <!-- Loadout Overlay -->
+  <div id="loadout-screen" class="overlay hidden">
+    <h1>LOADOUT</h1>
+    <p class="hint">Choose your drill class. Unlock more by collecting Relics.</p>
+    <div class="class-list" id="class-list"></div>
+    <button id="close-loadout-btn">Close</button>
+  </div>
+
+  <!-- Daily Contracts Overlay -->
+  <div id="contracts-screen" class="overlay hidden">
+    <h1>DAILY CONTRACTS</h1>
+    <p class="hint">Refresh every 24 hours. Complete a goal in a single run for bonus gold.</p>
+    <div class="contract-list" id="contract-list"></div>
+    <button id="close-contracts-btn">Close</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
