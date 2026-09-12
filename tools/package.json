@@ -1,0 +1,8 @@
+{
+  "name": "site-build-tools",
+  "private": true,
+  "description": "Builds the published game folders from their private source repos.",
+  "dependencies": {
+    "esbuild": "0.28.2"
+  }
+}
