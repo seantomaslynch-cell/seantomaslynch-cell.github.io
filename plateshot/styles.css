@@ -1,0 +1,41 @@
+/* PlateShot support and legal pages */
+:root {
+  --ground:#ffffff; --surface:#f2f6f8; --line:#dbe3ea;
+  --ink:#0b0f14; --ink2:#3d4957; --muted:#64717f; --accent:#0f8f80;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground:#0b0f14; --surface:#141a22; --line:#2a3441;
+    --ink:#f4f7fb; --ink2:#b4bfcc; --muted:#8693a3; --accent:#5eead4;
+  }
+}
+*{box-sizing:border-box}
+body,p,li,td,th,a{overflow-wrap:anywhere}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%}
+header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding-top:28px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.brand i{display:inline-block;width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#5eead4,#a78bfa)}
+.brand span{color:var(--accent)}
+nav{margin-left:auto;display:flex;gap:18px}
+nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600}
+nav a:hover,nav a.on{color:var(--accent)}
+h1{font-size:clamp(28px,5vw,38px);letter-spacing:-.02em;line-height:1.15;margin:0 0 10px}
+h2{font-size:21px;margin:34px 0 10px;letter-spacing:-.01em;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 8px}
+p,li{color:var(--ink2)}
+li{margin-bottom:6px}
+a{color:var(--accent)}
+strong{color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:18px 0}
+.card p{margin:0}
+.card p+p{margin-top:10px}
+.tw{overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+footer{margin-top:44px;padding-top:18px;padding-bottom:36px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
