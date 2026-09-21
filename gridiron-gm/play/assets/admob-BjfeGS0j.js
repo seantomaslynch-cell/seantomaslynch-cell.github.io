@@ -1,0 +1,1 @@
+const s=0,a=()=>!1;class r{constructor(){this.ready=!1}async load(){return!1}async showRewarded(){return{completed:!1,failed:!0}}cancel(){}}async function n(){return{installed:!1,reason:"demo build"}}export{s as AD_MAX_AGE_MS,r as AdMobProvider,n as installAdProvider,a as usingTestAds};
