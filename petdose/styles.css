@@ -92,3 +92,27 @@ footer a{color:var(--muted)}
   .fine{font-size:9.5pt}
   a{text-decoration:none}
 }
+
+/* Added: episode cards, chart rows, option hints */
+.log.chart td{height:44px}
+.log.roomy td{height:40px}
+.log td.mo{font-weight:600;color:var(--ink);vertical-align:middle;white-space:nowrap}
+.opts{color:var(--muted);font-size:14px;white-space:nowrap}
+.ep{border:1px solid var(--ink2);border-radius:8px;padding:10px 14px;margin:14px 0}
+.ep h3{margin:0 0 6px;font-size:15px}
+.ep .fields{margin:6px 0;gap:8px 18px}
+.pb{margin-top:28px}
+.ticks{display:flex;flex-wrap:wrap;gap:4px 16px;margin:4px 0 6px}
+.ticks span{display:inline-flex;align-items:center;gap:6px;font-size:15px}
+.ticks .box{margin-top:0}
+@media print{
+  .log.chart td{height:.42in}
+  .log.roomy td{height:.36in}
+  .opts{font-size:10pt}
+  .pb{margin-top:0;break-before:page;page-break-before:always}
+  .ep{border:1px solid #000;border-radius:0;padding:4px 8px;margin:6px 0;break-inside:avoid;page-break-inside:avoid}
+  .ep h3{font-size:11pt;margin:0 0 2px}
+  .ep .fields{gap:5px 14px;margin:4px 0}
+  .ticks{gap:2px 12px;margin:3px 0 4px}
+  .ticks span{font-size:10pt}
+}
