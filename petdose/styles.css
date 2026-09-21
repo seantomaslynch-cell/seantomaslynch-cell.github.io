@@ -39,3 +39,56 @@ th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);verti
 th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
 footer{margin-top:44px;padding-top:18px;padding-bottom:36px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer a{color:var(--muted)}
+
+/* Added: buttons, call-to-action card, printable sheets and print styles */
+.btn{display:inline-block;background:var(--accent);color:var(--ground);font:inherit;font-weight:700;font-size:16px;
+  padding:10px 18px;border:0;border-radius:10px;text-decoration:none;cursor:pointer}
+.btn:hover{opacity:.9}
+.cta p+p{margin-top:10px}
+.fine{font-size:14px;color:var(--muted)}
+.callout{border-left:4px solid var(--accent);background:var(--surface);padding:10px 14px;margin:14px 0;border-radius:0 10px 10px 0}
+.sheet{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:22px 0}
+.sheet h2{margin-top:0}
+.sheet h3{margin:18px 0 6px;font-size:16px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 22px;margin:12px 0}
+.field{display:flex;align-items:flex-end;gap:8px}
+.field.wide{grid-column:1/-1}
+.field b{font-size:14px;color:var(--ink);white-space:nowrap}
+.fill{flex:1;border-bottom:1px solid var(--ink2);min-height:1.5em}
+.lines{margin:6px 0}
+.fill-line{border-bottom:1px solid var(--ink2);height:1.9em}
+.log th,.log td{border:1px solid var(--ink2)}
+.log td{height:34px}
+.log.tall td{height:60px}
+.log th{text-transform:none;font-size:13px;letter-spacing:0}
+.log td.yn{color:var(--muted);font-size:14px;white-space:nowrap;vertical-align:middle}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 28px}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{display:flex;align-items:flex-start;gap:10px;margin-bottom:5px}
+.checks .fill{margin-top:.2em}
+.box{flex:none;display:inline-block;width:1.05em;height:1.05em;border:1.5px solid var(--ink2);border-radius:2px;margin-top:.28em}
+@media screen{.log{min-width:640px}}
+@media print{
+  @page{margin:.5in}
+  header,footer,nav,.noprint,.cta{display:none!important}
+  html,body{background:#fff!important}
+  body{font-size:11pt;line-height:1.35}
+  *{color:#000!important;background:transparent!important}
+  main{max-width:none;padding:0}
+  .sheet{border:0;padding:0;margin:0}
+  .sheet h2{font-size:18pt;border-bottom:1px solid #000;margin-bottom:8px}
+  .sheet h3{font-size:12pt;margin:12px 0 4px}
+  .callout{border:1px solid #000;border-left:4px solid #000;padding:6px 10px;margin:8px 0}
+  .fields{gap:8px 18px;margin:8px 0}
+  .fill,.fill-line{border-bottom:1px solid #000}
+  .fill-line{height:1.7em}
+  .tw{overflow:visible;margin:8px 0}
+  .log{width:100%;font-size:10pt}
+  .log th,.log td{border:1px solid #000;padding:3px 6px}
+  .log td{height:.3in}
+  .log.tall td{height:.55in}
+  .box{border:1.5px solid #000}
+  tr,.avoid,.callout{page-break-inside:avoid;break-inside:avoid}
+  .fine{font-size:9.5pt}
+  a{text-decoration:none}
+}
