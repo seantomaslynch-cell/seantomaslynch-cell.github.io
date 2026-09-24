@@ -17,12 +17,12 @@
 </header>
 <main>
 <h1>PlateShot Privacy Policy</h1>
-<p><strong>Last updated: September 22, 2026</strong></p>
+<p><strong>Last updated: September 23, 2026</strong></p>
 <p>This Privacy Policy explains how <strong>Sean Lynch</strong> ("we", "us") handles information in connection with the mobile app <strong>PlateShot</strong>, listed on the App Store as "PlateShot — Macro Logger" (the "App").</p>
 
 <h2>1. Summary</h2>
 <ul>
-  <li><strong>Your meal log stays on your phone.</strong> PlateShot has no account and no PlateShot server. Meals, photos, macros, water, shot-day notes, favorites and targets are stored only on your device and never uploaded to us.</li>
+  <li><strong>Your meal log stays on your phone.</strong> PlateShot has no account and no server that stores your data. Meals, photos, macros, water, shot-day notes, favorites and targets are stored only on your device and never uploaded to us.</li>
   <li>A photo you use for a calorie estimate may pass through PlateShot's vision proxy to OpenAI, only to compute that estimate. See section 3.</li>
   <li>We do not ask for your name, email address or access to your health records.</li>
   <li>Subscriptions are processed by <strong>Apple</strong> and checked through <strong>RevenueCat</strong>.</li>
@@ -35,7 +35,7 @@
 <p>Your log leaves your phone only if you choose to export it. Export (a Pro feature) creates a JSON file that you send wherever you choose through the iOS share sheet.</p>
 
 <h2>3. Photo estimates</h2>
-<p>When cloud estimates are enabled, the photo you photograph is sent to PlateShot's vision proxy, a small server that holds the AI provider's key so the App itself never does. The proxy forwards the photo to <strong>OpenAI</strong> solely to compute a calorie and macro estimate, then returns the numbers to the App. Neither the proxy nor PlateShot keeps a copy of the photo.</p>
+<p>When cloud estimates are enabled, the photo you photograph is sent to PlateShot's vision proxy, a small server that holds the AI provider's key so the App itself never does. The proxy forwards the photo to <strong>OpenAI</strong> solely to compute a calorie and macro estimate, then returns the numbers to the App. Neither the proxy nor PlateShot keeps a copy of the photo. To limit abuse, the proxy also keeps a daily request counter tied to your network (IP) address for up to 26 hours, and nothing else about the request.</p>
 <p>OpenAI's API does not use this data to train its models by default, and retains it for up to 30 days for abuse monitoring. See OpenAI's own policy: <a href="https://openai.com/policies/api-data-usage-policies/">openai.com/policies/api-data-usage-policies</a>.</p>
 <p>If a build of the App has no vision proxy configured, estimates are generated on-device by a demo estimator instead, and no photo leaves your phone.</p>
 
@@ -47,7 +47,7 @@
 <thead><tr><th>Purpose</th><th>Data</th><th>Provider</th></tr></thead>
 <tbody>
 <tr><td>Processing and restoring subscriptions, and subscription reporting for the developer (for example, how many people subscribe)</td><td>Store transaction identifiers, purchase receipts, a randomly generated app-install identifier. Not linked to your name or email, and not used for tracking.</td><td>Apple App Store and RevenueCat</td></tr>
-<tr><td>Computing a calorie and macro estimate from a meal photo (cloud-enabled builds only)</td><td>The photo you choose to estimate. Not linked to your name or email, and not used for tracking or advertising.</td><td>PlateShot's vision proxy, then OpenAI</td></tr>
+<tr><td>Computing a calorie and macro estimate from a meal photo (cloud-enabled builds only)</td><td>The photo you choose to estimate, and your network (IP) address for an abuse-limiting request counter kept up to 26 hours. Not linked to your name or email, and not used for tracking or advertising.</td><td>PlateShot's vision proxy, then OpenAI</td></tr>
 </tbody>
 </table></div>
 <p>RevenueCat does not receive your meal log or your photos. We do not receive your real-world identity, your card number or your billing address from Apple or RevenueCat. RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>. OpenAI's privacy policy: <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a>.</p>
@@ -58,6 +58,7 @@
 <h2>7. Data retention and deletion</h2>
 <ul>
   <li><strong>Your meal log:</strong> kept on your device until you delete it. Open <strong>Settings &rarr; Delete all data</strong> to erase meals, favorites and goals on that device, or delete the App.</li>
+  <li><strong>Abuse-limit counter:</strong> deleted automatically about 26 hours after it is created. Photos sent for an estimate are not stored by PlateShot.</li>
   <li><strong>Purchase records:</strong> retained by Apple and RevenueCat as required for tax, accounting and disputes. Deleting your data in the App does not cancel a subscription. After a reinstall, use Restore purchases.</li>
 </ul>
 
