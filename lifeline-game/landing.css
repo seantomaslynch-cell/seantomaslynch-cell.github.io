@@ -1,0 +1,45 @@
+/* LifeLine landing page. Loads after styles.css, which owns the palette, header, footer and legal text. */
+header,main,footer{max-width:960px}
+.langs{display:flex;gap:10px;margin-left:8px;padding-left:14px;border-left:1px solid var(--line)}
+.langs a{color:var(--muted);font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.04em}
+.langs a:hover,.langs a[aria-current]{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:8px 0 4px}
+.hero-id{display:flex;align-items:center;gap:14px}
+.hero-id img{width:72px;height:72px;border-radius:16px;flex:none;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.eyebrow{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin:2px 0 0}
+.lead{font-size:18px;line-height:1.6;color:var(--ink2);margin:6px 0 18px;max-width:46ch}
+.stores{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:700;font-size:16px;
+  text-decoration:none;border:1px solid var(--accent);color:var(--accent);background:transparent;min-height:48px}
+.stores .btn:first-child{background:var(--accent);color:#fff}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,.langs a:focus-visible,nav a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn small{display:block;font-size:11px;font-weight:600;letter-spacing:.04em;opacity:.85;text-transform:uppercase}
+.btn span{line-height:1.15;text-align:left}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;padding:0;list-style:none;color:var(--muted);font-size:14px;font-weight:600}
+.facts li::before{content:"\2713\00a0";color:var(--accent)}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 14px;margin:26px -20px 4px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.shots img{height:min(62vh,470px);width:auto;aspect-ratio:9/16;border-radius:16px;flex:none;scroll-snap-align:center;
+  border:1px solid var(--line);background:var(--surface)}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--ink2);font-size:15.5px;line-height:1.6}
+.faq details{border-bottom:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font-weight:700;list-style-position:outside}
+.faq p{margin:8px 0 0;color:var(--ink2)}
+.cta{margin:36px 0 8px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--surface);text-align:center}
+.cta h2{border:0;margin:0 0 6px;padding:0}
+.cta .stores{justify-content:center;margin-top:14px}
+@media (min-width:640px){
+  .cards{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:44px}
+}
+@media (min-width:900px){
+  .cards{grid-template-columns:1fr 1fr 1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .btn{transition:filter .15s}
+}

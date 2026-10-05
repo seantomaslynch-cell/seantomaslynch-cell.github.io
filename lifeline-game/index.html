@@ -3,23 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LifeLine</title>
-<meta name="description" content="LifeLine, a text-based life simulation game for iOS and Android.">
+<title>LifeLine: Text Life Simulator for iPhone and Android</title>
+<meta name="description" content="LifeLine is a text life simulator for iPhone and Android. Live one life a year at a time, from birth to headstone. Plays offline, no account.">
+<link rel="canonical" href="https://seantomaslynch-cell.github.io/lifeline-game/">
+<link rel="alternate" hreflang="en" href="https://seantomaslynch-cell.github.io/lifeline-game/">
+<link rel="alternate" hreflang="es" href="https://seantomaslynch-cell.github.io/lifeline-game/es/">
+<link rel="alternate" hreflang="pt" href="https://seantomaslynch-cell.github.io/lifeline-game/pt/">
+<link rel="alternate" hreflang="x-default" href="https://seantomaslynch-cell.github.io/lifeline-game/">
+<meta name="theme-color" content="#0a7d6b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LifeLine">
+<meta property="og:title" content="LifeLine: Text Life Simulator for iPhone and Android">
+<meta property="og:description" content="Live one life a year at a time, from birth to headstone. 36 careers, a lifetime of hand-written events, plays offline.">
+<meta property="og:url" content="https://seantomaslynch-cell.github.io/lifeline-game/">
+<meta property="og:image" content="https://seantomaslynch-cell.github.io/lifeline-game/img/og.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_419">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LifeLine: Text Life Simulator for iPhone and Android">
+<meta name="twitter:description" content="Live one life a year at a time, from birth to headstone. Plays offline, no account.">
+<meta name="twitter:image" content="https://seantomaslynch-cell.github.io/lifeline-game/img/og.jpg">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="landing.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "LifeLine: Life Simulator",
+  "alternateName": "LifeLine",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Simulation game",
+  "operatingSystem": "iOS, Android",
+  "description": "A text-based life simulator. Live one life a year at a time, from birth to headstone, with 36 careers, hand-written events and optional content packs. Plays offline, no account needed.",
+  "url": "https://seantomaslynch-cell.github.io/lifeline-game/",
+  "image": "https://seantomaslynch-cell.github.io/lifeline-game/img/og.jpg",
+  "screenshot": [
+    "https://seantomaslynch-cell.github.io/lifeline-game/img/shot-highschool.webp",
+    "https://seantomaslynch-cell.github.io/lifeline-game/img/shot-oval-office.webp",
+    "https://seantomaslynch-cell.github.io/lifeline-game/img/shot-heist.webp"
+  ],
+  "inLanguage": ["en", "es", "pt"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Sean Lynch" },
+  "sameAs": [
+    "https://play.google.com/store/apps/details?id=com.lifelinesimulator.game",
+    "https://apps.apple.com/app/id6806907577"
+  ]
+}
+</script>
 </head>
 <body>
 <header>
-  <a class="brand" href="index.html">Life<span>Line</span></a>
-  <nav>
+  <a class="brand" href="./">Life<span>Line</span></a>
+  <nav aria-label="Site">
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="mailto:temveno@gmail.com">Support</a>
+    <span class="langs" aria-label="Language">
+      <a href="./" hreflang="en" lang="en" aria-current="page">EN</a>
+      <a href="es/" hreflang="es" lang="es">ES</a>
+      <a href="pt/" hreflang="pt" lang="pt">PT</a>
+    </span>
   </nav>
 </header>
 <main>
-<h1>LifeLine</h1>
-<p>A text-based life simulation game for iOS and Android. Every choice, every year,
-every ending.</p>
+
+<section class="hero" aria-labelledby="top">
+  <div>
+    <div class="hero-id">
+      <img src="img/icon-192.png" width="72" height="72" alt="LifeLine app icon">
+      <div>
+        <p class="eyebrow">Text life simulator &middot; iPhone and Android</p>
+        <h1 id="top">LifeLine</h1>
+      </div>
+    </div>
+    <p class="lead">Live one life, one year at a time. Pick a career, raise a family, break a few rules, and find out what your headstone says.</p>
+    <div class="stores" id="stores">
+      <a class="btn" id="btn-ios" href="https://apps.apple.com/app/id6806907577" rel="noopener"><span><small>Download on the</small>App Store</span></a>
+      <a class="btn" id="btn-play" href="https://play.google.com/store/apps/details?id=com.lifelinesimulator.game&amp;referrer=utm_source%3Dlifeline_site%26utm_medium%3Dlanding_en%26utm_campaign%3Dlifeline_android" rel="noopener"><span><small>Get it on</small>Google Play</span></a>
+    </div>
+    <ul class="facts">
+      <li>Plays offline</li>
+      <li>No account</li>
+      <li>Ads only if you choose them</li>
+    </ul>
+  </div>
+</section>
+
+<div class="shots" role="group" aria-label="LifeLine screenshots">
+  <img src="img/shot-highschool.webp" width="540" height="960" loading="lazy" alt="High School pack: pick a lunch table, study or cram, and choose clubs and teams.">
+  <img src="img/shot-oval-office.webp" width="540" height="960" loading="lazy" alt="Oval Office pack: sign executive orders and watch approval and the economy move.">
+  <img src="img/shot-heist.webp" width="540" height="960" loading="lazy" alt="Heist pack: plan a job and see the odds before you commit.">
+  <img src="img/shot-family-tree.webp" width="540" height="960" loading="lazy" alt="Family Tree pack: grandparents, parents, aunts and uncles, and a family reunion to host.">
+  <img src="img/shot-verdict.webp" width="540" height="960" loading="lazy" alt="A headstone for a finished life, with epithets earned, net worth and bucket list progress.">
+  <img src="img/shot-crown.webp" width="540" height="960" loading="lazy" alt="Crown pack: born a prince, with a line of succession and a yearly duty to do or skip.">
+</div>
+
+<h2>A whole life, told in years</h2>
+<p>You press <strong>Age</strong> and a year goes by. Something happens: a job offer, a bad diagnosis, a landlord who wants his money, a cousin with a business idea. You choose, the choice sticks, and the next year starts from there. Then you die, and the game tells you how it went.</p>
+
+<div class="cards">
+  <div class="card"><h3>36 careers</h3><p>From the mailroom to the boardroom, the stage to the courtroom. More than 300 career decisions along the way.</p></div>
+  <div class="card"><h3>1,000+ hand-written events</h3><p>Every event is written by hand, not generated. They only fire when they make sense for your life.</p></div>
+  <div class="card"><h3>Legacy that carries on</h3><p>Ten prestige paths, 80 epitaphs and a 59-item bucket list. Your next life remembers the last one.</p></div>
+  <div class="card"><h3>A fresh Today's Life</h3><p>Every day brings a new starting point, the same for every player: a country, a background and a challenge. Play it and compare notes.</p></div>
+  <div class="card"><h3>23 optional packs</h3><p>Heist, Crown, Oval Office, Courtroom, High School and more. A pack adds a new way to play, never a bigger number than a free player has.</p></div>
+  <div class="card"><h3>No pressure</h3><p>No energy timers, no loot boxes, no subscription. Ads are rewarded and optional, never between years or on a menu.</p></div>
+</div>
+
+<h2>Questions</h2>
+<div class="faq">
+<details><summary>Is LifeLine free?</summary><p>Yes. It is free to download and play. Content packs and thank-you tiers are optional purchases. Packs add new ways to play, never a bigger number than a free player has.</p></details>
+<details><summary>Do I need an account or an internet connection?</summary><p>No account, no sign-in. The game plays offline. Your saved lives stay on your device.</p></details>
+<details><summary>What languages does it support?</summary><p>Menus and buttons are in English, Spanish and Portuguese. The stories themselves are written in English, and I would rather say so than machine-translate them.</p></details>
+<details><summary>How do the ads work?</summary><p>The only ads are rewarded ones you choose to watch for a bonus. There are no pop-ups, no banners and no ads between years.</p></details>
+<details><summary>Is it on both iPhone and Android?</summary><p>Yes. LifeLine is on the App Store for iPhone and on Google Play for Android.</p></details>
+<details><summary>Who makes it?</summary><p>One developer, Sean Lynch. If something breaks or you have an idea, email <a href="mailto:temveno@gmail.com">temveno@gmail.com</a>.</p></details>
+</div>
+
+<div class="cta">
+  <h2>Start a life</h2>
+  <p>It takes a few seconds to begin. It takes a lifetime to finish.</p>
+  <div class="stores" id="stores2">
+    <a class="btn" href="https://apps.apple.com/app/id6806907577" rel="noopener"><span><small>Download on the</small>App Store</span></a>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.lifelinesimulator.game&amp;referrer=utm_source%3Dlifeline_site%26utm_medium%3Dlanding_en_bottom%26utm_campaign%3Dlifeline_android" rel="noopener"><span><small>Get it on</small>Google Play</span></a>
+  </div>
+</div>
+
 <h2>Legal</h2>
 <ul>
 <li><a href="privacy.html">Privacy Policy</a>: what the game collects, and what it doesn't</li>
@@ -41,5 +157,18 @@ everything. You can also wipe all data from inside the game at any time:
   <a href="mailto:temveno@gmail.com">temveno@gmail.com</a> &middot;
   <a href="https://seantomaslynch-cell.github.io/">More apps</a>
 </footer>
+<script>
+/* Put the visitor's own store first. Without JS the App Store button leads. */
+(function () {
+  try {
+    var ua = navigator.userAgent || '';
+    if (!/Android/i.test(ua)) return;
+    ['stores', 'stores2'].forEach(function (id) {
+      var box = document.getElementById(id);
+      if (box && box.lastElementChild) box.insertBefore(box.lastElementChild, box.firstElementChild);
+    });
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
