@@ -1,19 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sean Lynch — Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sean Lynch: iPhone Apps and Games</title>
+<meta name="description" content="Apps and games by Sean Lynch for iPhone: LifeLine, Gridiron GM, Hardwood GM, PlateShot, PetDose and more. No accounts, built to play and use offline.">
+<link rel="canonical" href="https://seantomaslynch-cell.github.io/">
+<meta name="theme-color" content="#0f1115">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sean Lynch: iPhone Apps and Games">
+<meta property="og:description" content="LifeLine, Gridiron GM, Hardwood GM, PlateShot, PetDose and more.">
+<meta property="og:url" content="https://seantomaslynch-cell.github.io/">
+<meta property="og:image" content="https://seantomaslynch-cell.github.io/lifeline-game/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="lifeline-game/img/icon-192.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Sean Lynch","url":"https://seantomaslynch-cell.github.io/","jobTitle":"Independent app and game developer","email":"mailto:temveno@gmail.com"}
+</script>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 20px; line-height: 1.6; color: #222; }
-  a { color: #0a5cd8; }
+:root{--bg:#f6f7f9;--card:#fff;--ink:#12151b;--ink2:#444c59;--muted:#6b7482;--line:#e1e5ea;--accent:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#f1f3f6;--ink2:#b8c0cc;--muted:#8a94a3;--line:#262b35;--accent:#7aa7ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{padding:64px 0 28px}
+.hero h1{font-size:clamp(34px,6vw,54px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px}
+.hero p{max-width:620px;color:var(--ink2);font-size:19px;margin:0}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:44px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tc,var(--accent))}
+.card h3{margin:6px 0 6px;font-size:22px;letter-spacing:-.02em}
+.card p{margin:0 0 14px;color:var(--ink2);font-size:15.5px;line-height:1.55;flex:1}
+.card .go{font-size:14.5px;font-weight:600;color:var(--tc,var(--accent))}
+.small{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.small a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15.5px}
+.small a span{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
+.small a:hover{border-color:var(--accent)}
+.facts{display:flex;gap:10px 28px;flex-wrap:wrap;color:var(--ink2);font-size:15px;margin-top:22px;padding:0;list-style:none}
+.facts li:before{content:"\2713\00a0";color:var(--accent);font-weight:700}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 44px;color:var(--muted);font-size:14.5px}
+footer a{color:var(--muted)}
 </style>
 </head>
 <body>
-  <h1>Sean Lynch</h1>
-  <p>Developer of <a href="https://seantomaslynch-cell.github.io/endless-core/">Endless Core: Mining Rush</a>.</p>
-  <p>Developer of <a href="https://seantomaslynch-cell.github.io/dead-zone/">Dead Zone</a>.</p>
-  <p>Developer of <a href="https://seantomaslynch-cell.github.io/lifeline-game/">LifeLine</a>.</p>
-  <p>Developer of <a href="https://seantomaslynch-cell.github.io/hardwood-gm/">Hardwood GM</a>.</p>
+<div class="wrap">
+  <header class="hero">
+    <h1>Sean Lynch</h1>
+    <p>I make iPhone apps and games. Most work offline, none need an account, and every one has a plain-English privacy policy.</p>
+    <ul class="facts">
+      <li>No accounts</li>
+      <li>Plays offline</li>
+      <li>Support by email, fast</li>
+    </ul>
+  </header>
+
+  <main>
+    <h2>Featured</h2>
+    <div class="grid">
+      <a class="card" style="--tc:#0a7d6b" href="lifeline-game/">
+        <span class="tag">Life simulator</span>
+        <h3>LifeLine</h3>
+        <p>Live one life a year at a time, from birth to headstone. 36 careers, hand-written events, English, Spanish and Portuguese.</p>
+        <span class="go">Open LifeLine &rarr;</span>
+      </a>
+      <a class="card" style="--tc:#16a34a" href="gridiron-gm/">
+        <span class="tag">Football GM</span>
+        <h3>Gridiron GM</h3>
+        <p>Pro football franchise simulator. Play one full season and the whole offseason free in your browser, or get the full game on iPhone.</p>
+        <span class="go">Open Gridiron GM &rarr;</span>
+      </a>
+      <a class="card" style="--tc:#c96a26" href="hardwood-gm/">
+        <span class="tag">Basketball GM</span>
+        <h3>Hardwood GM</h3>
+        <p>Run the front office: talk to players, work trades, manage the cap. Your whole career lives on your phone.</p>
+        <span class="go">Open Hardwood GM &rarr;</span>
+      </a>
+      <a class="card" style="--tc:#0f8f80" href="plateshot/">
+        <span class="tag">Nutrition</span>
+        <h3>PlateShot</h3>
+        <p>Photo macro logger for protein-first and GLP-1 eating. Snap a plate, confirm the numbers, see what you have left.</p>
+        <span class="go">Open PlateShot &rarr;</span>
+      </a>
+      <a class="card" style="--tc:#0f766e" href="petdose/">
+        <span class="tag">Pets</span>
+        <h3>PetDose</h3>
+        <p>Pet medication tracker for diabetic cats, seizure logs and senior pets. See what is done, what is due and who did it.</p>
+        <span class="go">Open PetDose &rarr;</span>
+      </a>
+    </div>
+
+    <h2>More games</h2>
+    <div class="small">
+      <a href="creator-life/">Creator Life<span>Fame &amp; Power</span></a>
+      <a href="gatecrash-army/">Gatecrash Army<span>Crowd shooter</span></a>
+      <a href="dead-zone/">Dead Zone: Last Stand<span>Last Stand</span></a>
+      <a href="dead-sector/">Ashfall Squad<span>Squad game</span></a>
+      <a href="glow-horde/">Glow Horde<span>Horde game</span></a>
+      <a href="ashen-keep/">Ashen Keep<span>Idle game</span></a>
+      <a href="gullhaven/">Gullhaven<span>Merge and restore</span></a>
+    </div>
+
+    <h2>Contact</h2>
+    <p>Questions, bug reports or ideas: <a href="mailto:temveno@gmail.com">temveno@gmail.com</a>. I reply within a few days.</p>
+  </main>
+
+  <footer>&copy; 2026 Sean Lynch. Each app page has its own support and privacy policy.</footer>
+</div>
 </body>
 </html>

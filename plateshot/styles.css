@@ -39,3 +39,11 @@ th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);verti
 th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
 footer{margin-top:44px;padding-top:18px;padding-bottom:36px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer a{color:var(--muted)}
+
+/* landing */
+.hero{padding:6px 0 10px}
+.lede{font-size:19px;color:var(--ink2);margin:0 0 18px}
+.btn{display:inline-block;background:var(--accent);color:var(--ground);font-weight:700;font-size:16px;padding:12px 22px;border-radius:12px;text-decoration:none}
+.btn:hover{opacity:.9}
+.pts{margin:16px 0 0;padding:0;list-style:none;color:var(--ink2);font-size:15.5px}
+.pts li:before{content:"\2713\00a0";color:var(--accent);font-weight:700}
