@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://seantomaslynch-cell.github.io/sitemap.xml
 Sitemap: https://seantomaslynch-cell.github.io/petdose/sitemap.xml
 Sitemap: https://seantomaslynch-cell.github.io/lifeline-game/sitemap.xml
