@@ -13,6 +13,10 @@ h1{font-size:clamp(48px,12vw,96px);margin:0;letter-spacing:-.04em}
 p{color:var(--ink2);margin:8px 0 22px}
 a{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 22px;border-radius:12px;text-decoration:none}
 </style>
+<script>
+// LifeLine share links: a challenge id newer than these pages still lands on the generic challenge page.
+if (/^\/lifeline-game\/e\/challenge\/./.test(location.pathname)) location.replace('/lifeline-game/e/challenge/');
+</script>
 </head>
 <body>
 <main>
