@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.lifelinesimulator.game",
+      "sha256_cert_fingerprints": [
+        "C6:49:AA:39:CC:21:C4:2C:8B:66:E3:55:8C:02:8D:81:59:D3:C0:67:6B:7D:CF:C8:1F:14:11:D5:EC:AD:7C:34"
+      ]
+    }
+  }
+]
