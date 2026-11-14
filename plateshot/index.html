@@ -3,73 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PlateShot: Photo Macro Logger for Protein and GLP-1 (Support)</title>
-<meta name="description" content="PlateShot is a photo macro logger for protein-first and GLP-1 eating. Snap a plate, confirm the numbers, see what you have left. No account. Support and help.">
+<title>PlateShot: Photo Calorie and Protein Tracker for GLP-1</title>
+<meta name="description" content="PlateShot is a photo calorie and macro logger for people on GLP-1 medications. Snap a meal, see calories and protein, hit a protein-first daily target. 3-day free trial.">
 <meta name="apple-itunes-app" content="app-id=6814275994">
+<meta name="theme-color" content="#0b0f14">
 <link rel="canonical" href="https://seantomaslynch-cell.github.io/plateshot/">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PlateShot: Photo Macro Logger">
-<meta property="og:description" content="Snap a plate, confirm the numbers, see the protein and calories you have left. No account.">
+<meta property="og:site_name" content="PlateShot">
+<meta property="og:title" content="PlateShot: Photo Calorie and Protein Tracker for GLP-1">
+<meta property="og:description" content="Snap a meal, get calories and protein, and hit your protein-first target. Built for people on GLP-1 medications. 3-day free trial.">
 <meta property="og:url" content="https://seantomaslynch-cell.github.io/plateshot/">
-<link rel="stylesheet" href="styles.css">
+<meta property="og:image" content="https://seantomaslynch-cell.github.io/plateshot/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PlateShot: Photo Calorie and Protein Tracker for GLP-1">
+<meta name="twitter:description" content="Snap a meal, get calories and protein, and hit your protein-first target. 3-day free trial.">
+<meta name="twitter:image" content="https://seantomaslynch-cell.github.io/plateshot/img/og-image.jpg">
+<link rel="stylesheet" href="landing.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PlateShot","operatingSystem":"iOS","applicationCategory":"HealthApplication","description":"Photo calorie and macro logger for people on GLP-1 medications. Snap a meal, see calories and protein, and track a protein-first daily target.","url":"https://seantomaslynch-cell.github.io/plateshot/","downloadUrl":"https://apps.apple.com/app/id6814275994","image":"https://seantomaslynch-cell.github.io/plateshot/img/og-image.jpg","author":{"@type":"Person","name":"Sean Lynch"}}
+</script>
 </head>
 <body>
-<header>
-  <a class="brand" href="index.html"><i></i><b>Plate<span>Shot</span></b></a>
-  <nav>
-    <a href="index.html" class="on">Support</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-  </nav>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/icon-192.png" width="30" height="30" alt=""><b>Plate<span>Shot</span></b></a>
+    <nav class="links" aria-label="Main">
+      <a class="hide" href="#features">Features</a>
+      <a class="hide" href="#glp1">GLP-1</a>
+      <a class="hide" href="#faq">FAQ</a>
+      <a href="#support">Support</a>
+      <a class="pill" href="https://apps.apple.com/app/id6814275994">Get the app</a>
+    </nav>
+  </div>
 </header>
-<main>
+
+<main id="top">
+
 <section class="hero">
-<h1>PlateShot</h1>
-<p class="lede">Photo macro logger for protein-first eating, including people on GLP-1 medications. Snap a plate, confirm the numbers, and see the protein and calories you have left today.</p>
-<p><a class="btn" href="https://apps.apple.com/app/id6814275994">Get PlateShot on the App Store</a></p>
-<ul class="pts"><li>No account, your log stays on your phone</li><li>Edit every estimate before you save</li><li>Favorites and Recents for one-tap repeat meals</li></ul>
+  <div class="wrap">
+    <div>
+      <span class="tag">For Ozempic, Wegovy, Mounjaro and Zepbound users</span>
+      <h1>Eat less. <em>Hit your protein.</em> Just snap a photo.</h1>
+      <p class="lede">PlateShot is the photo calorie and macro logger built for life on GLP-1 medication. Snap your meal, see calories and protein in seconds, and know how much protein you still need today.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/app/id6814275994" aria-label="Download on the App Store">
+          <svg viewBox="0 0 156 52" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect x=".5" y=".5" width="155" height="51" rx="9" fill="#000" stroke="#a6a6a6"/>
+            <g transform="translate(13 10) scale(1.2)" fill="#fff"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></g>
+            <text x="48" y="19" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" textLength="76" lengthAdjust="spacingAndGlyphs">Download on the</text>
+            <text x="47" y="40" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="23" font-weight="600" textLength="98" lengthAdjust="spacingAndGlyphs">App Store</text>
+          </svg>
+        </a>
+        <span class="small">3-day free trial. Made for iPhone.</span>
+      </div>
+    </div>
+    <div class="phone"><img src="img/shot-today.webp" width="600" height="1299" alt="PlateShot Today screen showing a protein ring, calories left and a close-the-gap protein suggestion"></div>
+  </div>
 </section>
-<h2 id="support">Support</h2>
-<p>PlateShot is a photo macro logger built for protein-first eating, including people on GLP-1 medications. Snap a plate, confirm the numbers, and see the protein and calories you have left for the day. There is no account, and your log stays on your phone.</p>
 
-<div class="card">
-  <p><strong>Need help?</strong> Email <a href="mailto:temveno@gmail.com">temveno@gmail.com</a>. We aim to reply within a few days.</p>
-  <p>PlateShot is not a medical device and cannot give medical advice. Talk to your doctor or pharmacist about your medication and your diet.</p>
-</div>
+<section id="how">
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2>From plate to protein in three steps</h2>
+    <p class="sub">No weighing food. No searching a database for ten minutes.</p>
+    <div class="steps">
+      <div class="step"><h3>Snap your meal</h3><p>Take a photo of your plate, pick one from your library, or scan a barcode or nutrition label.</p></div>
+      <div class="step"><h3>Confirm the numbers</h3><p>PlateShot estimates calories, protein, carbs and fat. Edit anything before you save.</p></div>
+      <div class="step"><h3>See what is left</h3><p>Your Today screen shows protein first, then calories, so a small appetite still gets the nutrition it needs.</p></div>
+    </div>
+  </div>
+</section>
 
-<h2>Common questions</h2>
+<section id="features" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Features</span>
+    <h2>Everything you need, nothing you do not</h2>
+    <p class="sub">A calm, fast logger that fits real days, including the low-appetite ones.</p>
+    <div class="grid">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3>Photo logging</h3><p>Snap a meal and get calories, protein, carbs and fat. You always get to edit before saving.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></svg></div><h3>Protein-first target</h3><p>Your daily protein goal leads the screen, with a close-the-gap list of foods to hit it.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><h3>Water tracking</h3><p>Log water with a tap. Staying hydrated matters when you are eating less.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.5c0 5.4-7.5 10-7.5 10z"/></svg></div><h3>Weight from Apple Health</h3><p>Optional. PlateShot reads your latest weight and can save your meals and water to Apple Health.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 19 19 5"/><path d="m14 4 6 6"/><path d="M4 20l3-1 .5-3"/><path d="M9 15l4 4"/></svg></div><h3>GLP-1 shot day and side effects</h3><p>Note your shot day and how you feel. It stays on your phone, as a reminder for you.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><path d="M8 8v8M11 8v8M14 8v8M17 8v8"/></svg></div><h3>Widgets, barcode and label scan</h3><p>See your protein from the Home Screen, and scan a barcode or Nutrition Facts label for exact numbers.</p></div>
+    </div>
+  </div>
+</section>
 
-<h3>How accurate are the photo estimates?</h3>
-<p>They are estimates. Every photo log opens a confirm screen where you can edit calories, protein, carbs and fat before saving. For packaged food, the label is always more accurate, and you can enter those numbers by hand.</p>
+<section id="glp1">
+  <div class="wrap glp">
+    <div class="phone"><img src="img/shot-progress.webp" loading="lazy" width="600" height="1299" alt="PlateShot Progress screen with streak, pace and weekly protein chart"></div>
+    <div>
+      <span class="eyebrow">Built for GLP-1</span>
+      <h2>Small plates. Real protein.</h2>
+      <p>On Ozempic, Wegovy, Mounjaro or Zepbound, you eat less, and every bite counts. PlateShot keeps your eye on protein, so you can protect the muscle you are working to keep.</p>
+      <ul class="ticks">
+        <li>Protein target and calories side by side, protein first</li>
+        <li>A close-the-gap list built from your own favorites</li>
+        <li>Shot-day notes and side-effect check-ins</li>
+        <li>Weekly view of how many days you hit your protein</li>
+      </ul>
+      <p class="note">PlateShot is not a medical device and does not give medical advice. Calorie and macro numbers are estimates. Talk to your doctor or pharmacist about your medication and your diet. PlateShot is not affiliated with the makers of any medication.</p>
+    </div>
+  </div>
+</section>
 
-<h3>I would rather not use the camera. Can I still log?</h3>
-<p>Yes. Choose a photo from your library, or tap Enter manually and type the meal in. Favorites and Recents let you log a repeat meal in one tap.</p>
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Screenshots</span>
+    <h2>A look inside</h2>
+    <p class="sub">Swipe through the app.</p>
+    <div class="strip" tabindex="0" aria-label="App screenshots">
+      <figure><div class="phone"><img src="img/shot-confirm.webp" loading="lazy" width="600" height="1299" alt="Confirm meal screen with a photographed rice bowl"></div><figcaption>Confirm and edit</figcaption></figure>
+      <figure><div class="phone"><img src="img/shot-today.webp" loading="lazy" width="600" height="1299" alt="Today screen with protein ring"></div><figcaption>Protein first, every day</figcaption></figure>
+      <figure><div class="phone"><img src="img/shot-foods.webp" loading="lazy" width="600" height="1299" alt="Foods screen with favorites and recents"></div><figcaption>One-tap favorites</figcaption></figure>
+      <figure><div class="phone"><img src="img/shot-history.webp" loading="lazy" width="600" height="1299" alt="History screen"></div><figcaption>Your history</figcaption></figure>
+      <figure><div class="phone"><img src="img/shot-progress.webp" loading="lazy" width="600" height="1299" alt="Progress screen"></div><figcaption>Progress and pace</figcaption></figure>
+    </div>
+  </div>
+</section>
 
-<h3>How do I change my calorie and protein targets or my units?</h3>
-<p>Open Settings. You can change your daily targets and switch between imperial and metric there.</p>
+<section id="privacy">
+  <div class="wrap">
+    <span class="eyebrow">Privacy</span>
+    <h2>Your log stays yours</h2>
+    <p class="sub">No account. No ads. No tracking.</p>
+    <div class="priv">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><p><strong>On your phone.</strong> Meals, photos, water and targets are stored on your device. We cannot see them.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.5-9A6 6 0 0 1 18 8.5a4.8 4.8 0 0 1-.5 9.5z"/></svg></div><p><strong>Your own iCloud.</strong> An optional backup goes to your private iCloud, so a new phone is easy. You can turn it off.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.7-7 10-7 10 7 10 7-3.7 7-10 7S2 12 2 12z"/></svg></div><p><strong>Photos only for the estimate.</strong> The app asks first. A photo is sent only to work out calories and macros, and it is not kept.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.5 3.2 7.5 7.5 9 4.3-1.5 7.5-4.5 7.5-9V6z"/></svg></div><p><strong>No ads, no analytics.</strong> We do not sell your information. Apple Health is optional and stays on your iPhone.</p></div>
+    </div>
+    <p class="legalnote">Read the full <a href="privacy.html">Privacy Policy</a>.</p>
+  </div>
+</section>
 
-<h3>What does PlateShot Pro include?</h3>
-<p>Pro removes the limit on photo estimates, unlocks your history beyond the last 7 days, and adds JSON export of your log. Everything else in the app is free.</p>
+<section class="trial alt">
+  <div class="wrap">
+    <div class="box">
+      <h2>Try PlateShot free for 3 days</h2>
+      <p>Start the 3-day free trial, then continue with a yearly or lifetime plan. Cancel any time in your Apple settings.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/app/id6814275994" aria-label="Download on the App Store">
+          <svg viewBox="0 0 156 52" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect x=".5" y=".5" width="155" height="51" rx="9" fill="#000" stroke="#a6a6a6"/>
+            <g transform="translate(13 10) scale(1.2)" fill="#fff"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></g>
+            <text x="48" y="19" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" textLength="76" lengthAdjust="spacingAndGlyphs">Download on the</text>
+            <text x="47" y="40" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="23" font-weight="600" textLength="98" lengthAdjust="spacingAndGlyphs">App Store</text>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h3>I paid for Pro but the app does not show it.</h3>
-<p>Open Settings and tap Restore purchases, signed in to the same Apple Account you bought with. The same button is on the paywall.</p>
+<section id="faq">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2>Common questions</h2>
+    <p class="sub">Quick answers about estimates, Pro and your data.</p>
+    <div class="faq">
+      <details><summary>How accurate are the photo estimates?</summary><p>They are estimates. Every photo log opens a confirm screen where you can edit calories, protein, carbs and fat before saving. For packaged food, the label is always more accurate, and you can enter those numbers by hand.</p></details>
+      <details><summary>I would rather not use the camera. Can I still log?</summary><p>Yes. Choose a photo from your library, or tap Enter manually and type the meal in. Favorites and Recents let you log a repeat meal in one tap.</p></details>
+      <details><summary>How do I change my calorie and protein targets or my units?</summary><p>Open Settings. You can change your daily targets and switch between imperial and metric there.</p></details>
+      <details><summary>What does PlateShot Pro include?</summary><p>Pro removes the limit on photo estimates, unlocks your history beyond the last 7 days, and adds CSV export of your log. JSON backup is free, and everything else in the app is free.</p></details>
+      <details><summary>I paid for Pro but the app does not show it.</summary><p>Open Settings and tap Restore purchases, signed in to the same Apple Account you bought with. The same button is on the paywall.</p></details>
+      <details><summary>How do I cancel my subscription?</summary><p>Subscriptions are managed by Apple. On your iPhone open Settings, tap your name, then Subscriptions, then PlateShot. Deleting the app does not cancel a subscription.</p></details>
+      <details><summary>How do I delete my data?</summary><p>Open Settings and tap Delete all data. This erases meals, favorites and goals on that device, and the iCloud backup copy too. Your log is never stored on a server, and photos sent for an estimate are not kept, so there is nothing else to remove.</p></details>
+      <details><summary>I got a new phone. Where is my log?</summary><p>Your log lives on the device it was created on. If iCloud backup is on in Settings, you can restore it on your new phone. You can also make a free JSON backup from Settings before you switch, so you keep a copy.</p></details>
+    </div>
+  </div>
+</section>
 
-<h3>How do I cancel my subscription?</h3>
-<p>Subscriptions are managed by Apple. On your iPhone open Settings, tap your name, then Subscriptions, then PlateShot. Deleting the app does not cancel a subscription.</p>
+<section id="support" class="alt">
+  <div class="wrap support">
+    <h2>Support</h2>
+    <div class="card">
+      <p><strong>Need help?</strong> Email us and we aim to reply within a few days.</p>
+      <a class="mail" href="mailto:temveno@gmail.com">temveno@gmail.com</a>
+      <p class="small" style="margin:0">PlateShot is not a medical device and cannot give medical advice. Talk to your doctor or pharmacist about your medication and your diet.</p>
+    </div>
+  </div>
+</section>
 
-<h3>How do I delete my data?</h3>
-<p>Open Settings and tap Delete all data. This erases meals, favorites and goals on that device. Your log is never stored on a server, and photos sent for an estimate are not kept, so there is nothing else to remove.</p>
-
-<h3>I got a new phone. Where is my log?</h3>
-<p>Your log lives only on the device it was created on. If you have Pro, export it from Settings before you switch phones so you keep a copy.</p>
-
-<h2>Legal</h2>
-<p><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Use</a> (also in the app under Settings). Purchases are covered by <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's standard license agreement</a>.</p>
 </main>
-<footer>
-  &copy; 2026 Sean Lynch &middot;
-  <a href="mailto:temveno@gmail.com">temveno@gmail.com</a> &middot;
-  <a href="https://seantomaslynch-cell.github.io/">More apps</a>
+
+<footer class="site">
+  <div class="wrap">
+    <span>&copy; 2026 Sean Lynch</span>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="#support">Support</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple license agreement</a>
+      <a href="https://seantomaslynch-cell.github.io/">More apps</a>
+    </nav>
+  </div>
 </footer>
+
 </body>
 </html>
