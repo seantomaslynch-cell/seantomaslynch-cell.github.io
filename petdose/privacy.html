@@ -20,7 +20,7 @@
 </header>
 <main>
 <h1>PetDose Privacy Policy</h1>
-<p><strong>Last updated: September 23, 2026</strong></p>
+<p><strong>Last updated: November 14, 2026</strong></p>
 <p>This Privacy Policy explains how <strong>Sean Lynch</strong> ("we", "us") handles information in connection with the mobile app <strong>PetDose</strong> (the "App").</p>
 
 <h2>1. Summary</h2>
@@ -28,7 +28,7 @@
   <li><strong>Your records stay on your phone.</strong> PetDose has no account and no server. The pets, schedules, doses, weights and notes you enter are stored only on your device and are never uploaded to us.</li>
   <li>The free version shows <strong>ads from Google AdMob</strong>. Ads are <strong>never personalized</strong>, and the App never asks to track you.</li>
   <li>Subscriptions are processed by <strong>Apple</strong> and <strong>RevenueCat</strong>.</li>
-  <li>We do <strong>not</strong> sell your information, and we have no analytics or crash-reporting service.</li>
+  <li>We do <strong>not</strong> sell your information. Starting with version 1.2.2 the App sends <strong>anonymous usage counts</strong> (for example "a dose was logged"), never a pet name, a medicine, an amount or a note. You can turn this off in Settings.</li>
 </ul>
 
 <h2>2. Information you enter</h2>
@@ -40,10 +40,11 @@
 <tbody>
 <tr><td>Showing ads in the free version (banners, occasional full-screen ads, and ads you choose to watch)</td><td>Coarse device and app information, IP address (used for ad delivery and fraud prevention), ad interaction events. No advertising identifier (IDFA) is requested, and every ad request is marked non-personalized.</td><td>Google AdMob</td></tr>
 <tr><td>Processing and restoring subscriptions and purchases</td><td>Store transaction identifiers, purchase receipts, a randomly generated app-install identifier, and, if the install came from an Apple Search Ads ad, Apple's attribution token (used to measure which ads led to installs, not to identify you)</td><td>Apple App Store and RevenueCat</td></tr>
+<tr><td>Anonymous usage counts, to find what is confusing and fix it</td><td>The name of an action (for example "dose logged" or "report made"), a few small numbers or fixed words about it, the app version, the platform, and a random identifier created in the App. No pet names, medicines, amounts, notes, readings, device identifiers or location. The counts are not linked to you and are not used for advertising or tracking.</td><td>PostHog</td></tr>
 <tr><td>Reminders</td><td>Reminder text and times, scheduled on your device by iOS. Nothing is sent to us.</td><td>Apple iOS (on device)</td></tr>
 </tbody>
 </table></div>
-<p>None of these providers receives your pet records. We do not receive your real-world identity from any of them. Google's ad data practices: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>. RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
+<p>None of these providers receives your pet records. We do not receive your real-world identity from any of them. Google's ad data practices: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>. RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>. PostHog's privacy policy: <a href="https://posthog.com/privacy">posthog.com/privacy</a>.</p>
 
 <h2>4. Advertising and your choices</h2>
 <ul>
@@ -51,6 +52,7 @@
   <li>No ads appear on the Today screen or anywhere you record a medication.</li>
   <li>In the European Economic Area, the UK and Switzerland, Google's consent form may appear. You can review your choice any time in <strong>Settings &rarr; Records &rarr; Ad privacy choices</strong>.</li>
   <li>Subscribing to <strong>PetDose Pro</strong> removes all ads.</li>
+  <li>To stop sending anonymous usage counts, open <strong>Settings &rarr; Privacy</strong> and tap <strong>Stop sharing</strong>.</li>
 </ul>
 
 <h2>5. Subscriptions</h2>
@@ -60,6 +62,7 @@
 <ul>
   <li><strong>Your records:</strong> kept on your device until you delete them. Open <strong>Settings &rarr; Records &rarr; Delete all my data</strong>, or delete the App.</li>
   <li><strong>Ad and fraud-prevention data:</strong> retained by Google under its own policy.</li>
+  <li><strong>Anonymous usage counts:</strong> kept by PostHog for up to one year, then deleted. They cannot be tied back to you, so there is nothing to look up or remove.</li>
   <li><strong>Purchase records:</strong> retained by Apple and RevenueCat as required for tax, accounting and disputes.</li>
 </ul>
 
