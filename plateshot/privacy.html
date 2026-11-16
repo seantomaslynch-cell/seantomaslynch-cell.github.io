@@ -18,7 +18,7 @@
 </header>
 <main>
 <h1>PlateShot Privacy Policy</h1>
-<p><strong>Last updated: October 10, 2026</strong></p>
+<p><strong>Last updated: November 15, 2026</strong></p>
 <p>This Privacy Policy explains how <strong>Sean Lynch</strong> ("we", "us") handles information in connection with the mobile app <strong>PlateShot</strong>, listed on the App Store as "PlateShot — Macro Logger" (the "App").</p>
 
 <h2>1. Summary</h2>
@@ -27,7 +27,7 @@
   <li>A meal photo, a Nutrition Facts label photo, or a meal description you type for a calorie estimate may pass through PlateShot's vision proxy to Anthropic or OpenAI, only to compute that estimate. The App asks first. See section 3.</li>
   <li>We do not ask for your name, email address or access to your health records. Apple Health is optional and its data never leaves your phone through PlateShot (section 4).</li>
   <li>Subscriptions are processed by <strong>Apple</strong> and checked through <strong>RevenueCat</strong>.</li>
-  <li>The App has <strong>no ads</strong>, no product analytics or crash-reporting service, and no tracking. We do <strong>not</strong> sell your information.</li>
+  <li>The App uses <strong>PostHog</strong> for product analytics: usage events tied to a random app ID, with no name, email or account (section 5). The App has <strong>no ads</strong>, no crash-reporting service, and no tracking across other companies' apps or websites. We do <strong>not</strong> sell your information.</li>
   <li>PlateShot is <strong>not a medical device</strong>. Calorie and macro numbers are estimates for your own information.</li>
 </ul>
 
@@ -52,10 +52,12 @@
 <thead><tr><th>Purpose</th><th>Data</th><th>Provider</th></tr></thead>
 <tbody>
 <tr><td>Processing and restoring subscriptions, and subscription reporting for the developer (for example, how many people subscribe)</td><td>Store transaction identifiers, purchase receipts, a randomly generated app-install identifier. Not linked to your name or email, and not used for tracking.</td><td>Apple App Store and RevenueCat</td></tr>
+<tr><td>Product analytics, to understand how the App is used and improve it</td><td>Usage events (for example screens viewed, onboarding answers such as your goal type, paywall views, purchases started, whether a scan succeeded or failed), a random app ID (no name, email or account), app version, device type and language. Never your meal log, photos or typed meal descriptions. Not used for advertising or tracking, and not sold. Kept under PostHog's standard retention settings.</td><td>PostHog (United States)</td></tr>
 <tr><td>Optional backup of your log to restore on a new phone (iPhone)</td><td>Meals, favorites, water, weigh-ins and targets, stored in your own iCloud account. We cannot read it.</td><td>Apple iCloud</td></tr>
 <tr><td>Computing a calorie and macro estimate from a meal photo, a nutrition label photo, or a typed meal description (cloud-enabled builds only)</td><td>The photo or text you choose to estimate, your network (IP) address for an abuse-limiting request counter kept up to 26 hours, and the random RevenueCat purchase identifier to check Pro. Not linked to your name or email, and not used for tracking or advertising.</td><td>PlateShot's vision proxy, then Anthropic (or OpenAI as a fallback)</td></tr>
 </tbody>
 </table></div>
+<p>PostHog's privacy policy: <a href="https://posthog.com/privacy">posthog.com/privacy</a>.</p>
 <p>RevenueCat does not receive your meal log or your photos. We do not receive your real-world identity, your card number or your billing address from Apple or RevenueCat. RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>. Anthropic's privacy policy: <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>. OpenAI's privacy policy: <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a>.</p>
 
 <h2>6. Subscriptions</h2>
