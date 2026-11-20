@@ -19,6 +19,8 @@ if (/^\/lifeline-game\/e\/challenge\/./.test(location.pathname)) location.replac
 // Shared life codes: /e/life/<code> has no page of its own, so show the code on the life page.
 var lm = location.pathname.match(/^\/lifeline-game\/e\/life\/([^/]+)\/?$/);
 if (lm) location.replace('/lifeline-game/e/life/?c=' + encodeURIComponent(lm[1]));
+// Sticker Therapy web app: deep links (a room, a pack) open the app home.
+if (/^\/sticker-therapy\/./.test(location.pathname)) location.replace('/sticker-therapy/');
 </script>
 </head>
 <body>
