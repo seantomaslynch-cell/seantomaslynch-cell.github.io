@@ -28,7 +28,15 @@
     <script>
       // Safety net so a failed load never leaves the boot screen covering an error.
       setTimeout(function () { var b = document.getElementById('boot'); if (b && b.parentNode) b.parentNode.removeChild(b); }, 20000);
+      // Boot line in the saved (or device) language, same rule as src/i18n.
+      try {
+        var l = 'auto';
+        try { l = JSON.parse(localStorage.getItem('sn:settings:v1') || '{}').lang || 'auto'; } catch (e) {}
+        if (l === 'auto') { var n = (navigator.language || '').toLowerCase(); l = n.indexOf('pt') === 0 ? 'pt-BR' : n.indexOf('es') === 0 ? 'es' : 'en'; }
+        var sub = { 'pt-BR': 'Preparando seus cômodos', es: 'Preparando tus habitaciones' }[l];
+        if (sub) document.querySelector('#boot .boot-sub').textContent = sub;
+      } catch (e) {}
     </script>
-  <script src="/sticker-therapy/_expo/static/js/web/__expo-metro-runtime-97703ae02682710149335928b974f18d.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/__common-0523421630d9061469a7009181489122.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/entry-da42b37bb00c126dce5c915b9fe1d637.js" defer></script>
+  <script src="/sticker-therapy/_expo/static/js/web/__expo-metro-runtime-97703ae02682710149335928b974f18d.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/__common-86d3094b3ad0f07a210916855aec347f.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/entry-1d815cfa23564ac5510c939faf80a331.js" defer></script>
 </body>
 </html>
