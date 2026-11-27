@@ -11,10 +11,21 @@
       body { overflow: hidden; }
       #root { display: flex; height: 100%; flex: 1; }
       #boot { position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fdf1f3; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; transition: opacity .35s ease; }
-      #boot .boot-name { font-size: 30px; font-weight: 800; color: #bd5274; animation: bootpulse 1.8s ease-in-out infinite; }
+      #boot .boot-art { position: relative; width: 150px; height: 150px; }
+      #boot .boot-icon { width: 150px; height: 150px; border-radius: 34px; box-shadow: 0 10px 28px rgba(189, 82, 116, .22); animation: bootfloat 2.6s ease-in-out infinite; }
+      #boot .boot-dot { position: absolute; width: 22px; height: 22px; border-radius: 50%; opacity: 0; animation: bootpop 2.4s ease-in-out infinite; }
+      #boot .d1 { background: #f7c6d0; top: -10px; left: -18px; }
+      #boot .d2 { background: #cdeedd; top: 8px; right: -26px; width: 16px; height: 16px; animation-delay: .4s; }
+      #boot .d3 { background: #cfe6f7; bottom: -6px; left: -26px; width: 14px; height: 14px; animation-delay: .8s; }
+      #boot .d4 { background: #f6e2a6; bottom: -14px; right: -14px; animation-delay: 1.2s; border-radius: 6px; transform: rotate(12deg); }
+      #boot .boot-name { margin-top: 26px; font-size: 30px; font-weight: 800; color: #bd5274; }
       #boot .boot-sub { margin-top: 8px; font-size: 15px; color: #7d5d64; }
-      @keyframes bootpulse { 0%, 100% { opacity: .45; transform: scale(.98); } 50% { opacity: 1; transform: scale(1); } }
-      @media (prefers-reduced-motion: reduce) { #boot .boot-name { animation: none; opacity: 1; } }
+      #boot .boot-bar { margin-top: 18px; width: 120px; height: 6px; border-radius: 3px; background: #f7dde3; overflow: hidden; }
+      #boot .boot-bar i { display: block; width: 40%; height: 100%; border-radius: 3px; background: #f7a8bb; animation: bootslide 1.4s ease-in-out infinite; }
+      @keyframes bootfloat { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+      @keyframes bootpop { 0% { opacity: 0; transform: scale(.4); } 25%, 60% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(.6); } }
+      @keyframes bootslide { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+      @media (prefers-reduced-motion: reduce) { #boot .boot-icon, #boot .boot-bar i { animation: none; } #boot .boot-dot { animation: none; opacity: 1; } }
     </style>
   <link rel="icon" href="/sticker-therapy/favicon.ico"/></head>
   <body>
@@ -22,10 +33,22 @@
     <div id="root"></div>
     <!-- Branded boot screen: removed by src/app/_layout.tsx once the app mounts. -->
     <div id="boot" role="status" aria-label="Loading Sticker Therapy">
+      <div class="boot-art" aria-hidden="true">
+        <img class="boot-icon" alt="" width="150" height="150" />
+        <span class="boot-dot d1"></span><span class="boot-dot d2"></span><span class="boot-dot d3"></span><span class="boot-dot d4"></span>
+      </div>
       <div class="boot-name">Sticker Therapy</div>
       <div class="boot-sub">Getting your rooms ready</div>
+      <div class="boot-bar" aria-hidden="true"><i></i></div>
     </div>
     <script>
+      // Icon lives next to index.html; the web build is served under /sticker-therapy on GitHub Pages.
+      try {
+        var base = location.pathname.indexOf('/sticker-therapy') === 0 ? '/sticker-therapy/' : '/';
+        var im = document.querySelector('#boot .boot-icon');
+        im.onerror = function () { im.parentNode.style.display = 'none'; };
+        im.src = base + 'boot-icon.png';
+      } catch (e) {}
       // Safety net so a failed load never leaves the boot screen covering an error.
       setTimeout(function () { var b = document.getElementById('boot'); if (b && b.parentNode) b.parentNode.removeChild(b); }, 20000);
       // Boot line in the saved (or device) language, same rule as src/i18n.
@@ -37,6 +60,6 @@
         if (sub) document.querySelector('#boot .boot-sub').textContent = sub;
       } catch (e) {}
     </script>
-  <script src="/sticker-therapy/_expo/static/js/web/__expo-metro-runtime-97703ae02682710149335928b974f18d.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/__common-92ceaab284be48fe5c8ea25be8f97ad1.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/entry-2717537ea049f0a2ef291a6f5b013342.js" defer></script>
+  <script src="/sticker-therapy/_expo/static/js/web/__expo-metro-runtime-97703ae02682710149335928b974f18d.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/__common-4690c2631e8c95599d9211d99f7000f2.js" defer></script><script src="/sticker-therapy/_expo/static/js/web/entry-78a75af714bd1d0635d1a7e08c37bebb.js" defer></script>
 </body>
 </html>
